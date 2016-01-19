@@ -1,0 +1,15 @@
+{
+  "name": "Sam-IRC-Node.JS",
+  "description": "Node.JS training project",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=0.10.x",
+    "npm": ">=1.2.x"
+  },
+  "dependencies": {
+    "express": "^4.12.4",
+    "pg": "^4.4.3",
+    "sequelize": "^3.17.3"
+  }
+}
