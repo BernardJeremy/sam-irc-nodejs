@@ -1,5 +1,5 @@
 var userController = require('./controllers/user');
 
-module.exports = function (app) {
-     app.get('/', userController.home);
+module.exports = function(app) {
+  app.get('/', userController.home);
 };

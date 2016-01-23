@@ -1,10 +1,10 @@
 module.exports = {
-  database : 'sam_irc',
-  username : 'dev',
-  password : 'dev1',
-  options  : {
-    host     : 'localhost',
-    dialect  : 'postgres',
-    logging  : false
-  }
+  database: 'sam_irc',
+  username: 'dev',
+  password: 'dev1',
+  options: {
+    host: 'localhost',
+    dialect: 'mysql',
+    logging: false,
+  },
 };

@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "express": "^4.12.4",
+    "mysql": "^2.10.2",
     "pg": "^4.4.3",
     "sequelize": "^3.17.3"
   },
@@ -18,5 +19,5 @@
   },
   "scripts": {
     "test": "istanbul cover node_modules/jasmine/bin/jasmine.js"
-}
+  }
 }
