@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+</head>
+<body ng-app="app">
+  <form id="loginForm" method="post" action="#" ng-controller="formLoginCtrl">
+    <div>
+      <h2>User Login</h2>
+      <p>Please login</p>
+    </div>
+    <label class="description" for="element_1">Login </label>
+    <div>
+      <input id="login" ng-model="login" name="login" class="element text medium" type="text" maxlength="255" value="">
+      <span>Tu es <b ng-bind="displayLoginText()"></b></span>
+    </div>
+    <label class="description" for="element_2">Password </label>
+    <div>
+      <input id="password" ng-model="password" name="password" class="element text medium" type="text" maxlength="255" value="">
+    </div>
+    <input id="submitForm" class="button_text" type="submit" name="submit" value="Submit">
+  </form>
+  <script src="../js/angular/angular.min.js"></script>
+  <script src="../js/angular/controllers.js"></script>
+  <!--<script>window.$ = window.jQuery = require('../js/jquery.min.js');</script>-->
+  <!--<script src="../js/login.js"></script>-->
+</body>
+</html>
