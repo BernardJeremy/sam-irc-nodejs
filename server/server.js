@@ -2,6 +2,7 @@ var express = require('express');
 var session = require('express-session');
 var cookieParser = require('cookie-parser');
 var flash = require('connect-flash');
+var cors = require('cors');
 var bodyParser = require('body-parser');
 var passport = require('./libs/passport');
 
@@ -11,6 +12,8 @@ var app = express();
 
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
+
+app.use(cors());
 
 app.use(cookieParser('secretirc602'));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -32,6 +35,9 @@ app.use(function(req, res, next) {
 
 require('./routes')(app, passport);
 
-app.listen(port, function() {
+var server = app.listen(port, function() {
   console.log('Listening on port ' + port);
 });
+
+var io = require('socket.io')(server);
+require('./libs/socket.io.js')(io);

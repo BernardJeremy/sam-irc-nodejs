@@ -15,11 +15,24 @@
     <div id="chatbox"></div>
 
     <form name="message" action="">
-        <input name="usermsg" type="text" id="usermsg" size="63" />
+        <input data-username="<%= user.username %>" id="usermsg" name="usermsg" type="text" id="usermsg" size="63" />
         <input name="submitmsg" type="submit"  id="submitmsg" value="Send" />
     </form>
 </div>
 <% include ../partials/flash %>
 </body>
 <% include ../partials/footer %>
+<script src="/js/socket.io.js"></script>
+<script>
+  var socket = io();
+  $('form').submit(function(e){
+    e.preventDefault();
+   socket.emit('msg', '[' + $('#usermsg').data('username') + '] ' + $('#usermsg').val());
+   $('#usermsg').val('');
+   return false;
+ });
+ socket.on('broadcast', function(msg){
+    $('#chatbox').append(msg + '</br>');
+  });
+</script>
 </html>

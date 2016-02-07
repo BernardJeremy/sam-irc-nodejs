@@ -21,6 +21,7 @@
     "passport-local": "^1.0.0",
     "sequelize": "^3.17.3",
     "sha1": "^1.1.1",
+    "socket.io": "^1.4.5",
     "strftime": "^0.9.2"
   }
 }
