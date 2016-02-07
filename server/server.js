@@ -26,6 +26,7 @@ app.use(passport.session());
 
 app.use(function(req, res, next) {
   res.locals.flash = req.flash('flash');
+  res.locals.user = req.user;
   next();
 });
 

@@ -12,15 +12,16 @@
     </div>
     <label class="description" for="element_1">Login </label>
     <div>
-      <input id="login" name="login" class="element text medium" type="text" maxlength="255" value="">
+      <input id="login" name="username" class="element text medium" type="text" maxlength="255" value="">
       <span></span>
     </div>
     <label class="description" for="element_2">Password </label>
     <div>
-      <input id="password" name="password" class="element text medium" type="text" maxlength="255" value="">
+      <input id="password" name="password" class="element text medium" type="password" maxlength="255" value="">
     </div>
     <input id="submitForm" class="button_text" type="submit" name="submit" value="Submit">
   </form>
+	<% include ../partials/flash %>
 </body>
-<script src="/js/jquery.min.js"></script>
+<% include ../partials/footer %>
 </html>

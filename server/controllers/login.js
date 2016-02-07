@@ -1,6 +1,6 @@
 exports.loginOk = function(req, res) {
   req.flash('flash', 'Vous êtes connecté.');
-  var redirectTo = req.session.returnTo ? req.session.returnTo : '/';
+  var redirectTo = req.session.returnTo ? req.session.returnTo : '/chat';
   delete req.session.returnTo;
   res.redirect(redirectTo);
 

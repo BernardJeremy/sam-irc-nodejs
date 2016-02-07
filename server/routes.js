@@ -3,21 +3,27 @@ var ensureLoggedOut = require('connect-ensure-login').ensureLoggedOut;
 
 var userController = require('./controllers/user');
 var loginController = require('./controllers/login');
+var chatController = require('./controllers/chat');
 
 module.exports = function(app, passport) {
+
+  /**
+  ** CHAT
+  */
+  app.get('/chat', chatController.renderChat);
 
   /**
   ** LOGIN
   */
   app.get('/', loginController.loginView);
 
-  /*  app.post('/login', passport.authenticate('local', { failureRedirect: '/login/fail/' }), loginController.loginOk);
+  app.post('/login', passport.authenticate('local', { failureRedirect: '/login/fail/' }), loginController.loginOk);
 
-    app.get('/login/fail', loginController.loginFail);
+  app.get('/login/fail', loginController.loginFail);
 
-    app.get('/login/needed', loginController.loginNeeded);
+  app.get('/login/needed', loginController.loginNeeded);
 
-    app.get('/logout', loginController.logout);*/
+  app.get('/logout', loginController.logout);
 
   /**
  USER
