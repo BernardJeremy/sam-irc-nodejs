@@ -1,6 +1,6 @@
 {
-  "name": "Sam-IRC-Node.JS",
-  "description": "Node.JS training project",
+  "name": "GEAPP-NODE",
+  "description": "Node.JS version of Geapp",
   "version": "1.0.0",
   "private": true,
   "engines": {
@@ -8,17 +8,19 @@
     "npm": ">=1.2.x"
   },
   "dependencies": {
+    "body-parser": "^1.14.2",
+    "connect-ensure-login": "^0.1.1",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.1",
+    "ejs": "^2.4.1",
     "express": "^4.12.4",
-    "html": "0.0.10",
+    "express-session": "^1.13.0",
+    "msexcel-builder": "0.0.2",
     "mysql": "^2.10.2",
-    "pg": "^4.4.3",
-    "sequelize": "^3.17.3"
-  },
-  "devDependencies": {
-    "istanbul": "^0.4.2",
-    "jasmine": "^2.4.1"
-  },
-  "scripts": {
-    "test": "istanbul cover node_modules/jasmine/bin/jasmine.js"
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "sequelize": "^3.17.3",
+    "sha1": "^1.1.1",
+    "strftime": "^0.9.2"
   }
 }

@@ -1,21 +1,37 @@
+var ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn;
+var ensureLoggedOut = require('connect-ensure-login').ensureLoggedOut;
+
 var userController = require('./controllers/user');
 var loginController = require('./controllers/login');
 
-module.exports = function(app) {
+module.exports = function(app, passport) {
 
   /**
-   * LOGIN
-   */
+  ** LOGIN
+  */
+  app.get('/', loginController.loginView);
 
-  app.get('/login/', loginController.view);
+  /*  app.post('/login', passport.authenticate('local', { failureRedirect: '/login/fail/' }), loginController.loginOk);
+
+    app.get('/login/fail', loginController.loginFail);
+
+    app.get('/login/needed', loginController.loginNeeded);
+
+    app.get('/logout', loginController.logout);*/
 
   /**
-   * USER
-   */
+ USER
+*/
+  /*  app.get('/user/:userId/view', ensureLoggedIn('/login/needed'), adminMiddleware.ensureIsAdmin('/'), userController.view);
 
-  app.get('/user/', userController.home);
+      app.get('/user/new', ensureLoggedIn('/login/needed'), adminMiddleware.ensureIsAdmin('/'), userController.new);
 
-  app.post('/user/login', userController.login);
+      app.post('/user/register', ensureLoggedIn('/login/needed'), adminMiddleware.ensureIsAdmin('/'), userController.register);
 
-  app.post('/user/register', userController.register);
+      app.post('/user/:userId/update', ensureLoggedIn('/login/needed'), adminMiddleware.ensureIsAdmin('/'), userController.update);
+
+      app.get('/user/:userId/delete', ensureLoggedIn('/login/needed'), adminMiddleware.ensureIsAdmin('/'), userController.delete);
+
+      app.get('/user/:userId/changeactive', ensureLoggedIn('/login/needed'), adminMiddleware.ensureIsAdmin('/'), userController.changeActive);*/
+
 };

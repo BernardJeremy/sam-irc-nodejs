@@ -1,7 +1,4 @@
-var dbConfig = require('../config/db.conf');
-if (!dbConfig) {
-  process.exit();
-}
+var dbConfig = require('../config/config.json').dbConfig;
 
 var Sequelize = require('sequelize');
 

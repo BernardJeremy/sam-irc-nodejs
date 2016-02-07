@@ -35,13 +35,13 @@ app.on('ready', function() {
   mainWindow = new BrowserWindow({ width: 800, height: 600, show: false });
 
   //and load the index.html of the app.
-  mainWindow.loadURL('http://' + baseUrl + '/login');
+  mainWindow.loadURL('http://' + baseUrl + '/');
 
   //mainWindow.loadURL('https://github.com');
   mainWindow.show();
 
   // Open the DevTools.
-  //mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function() {
