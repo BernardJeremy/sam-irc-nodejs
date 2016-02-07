@@ -1,4 +1,5 @@
-$('#loginForm').submit(function(event) {
+$('#loginForm').on('submit', function(event) {
+  alert('FAIL AJAX : ININININ');
   event.preventDefault();
   $.ajax({
     url: 'http://localhost:8080/user/',

@@ -4,6 +4,17 @@ const electron = require('electron');
 const app = electron.app;  // Module to control application life.
 const BrowserWindow = electron.BrowserWindow;  // Module to create native browser window.
 
+require('electron-reload')(__dirname, {
+  electron: require('electron-prebuilt'),
+});
+
+if (process.argv.length < 3) {
+  console.log('Missing argument');
+  process.exit();
+}
+
+var baseUrl = process.argv[2];
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 var mainWindow = null;
@@ -24,9 +35,7 @@ app.on('ready', function() {
   mainWindow = new BrowserWindow({ width: 800, height: 600, show: false });
 
   //and load the index.html of the app.
-  mainWindow.loadURL('file://' + __dirname + '/assets/views/login.html');
-
-  mainWindow.webContents.openDevTools();
+  mainWindow.loadURL('http://' + baseUrl + '/login');
 
   //mainWindow.loadURL('https://github.com');
   mainWindow.show();
