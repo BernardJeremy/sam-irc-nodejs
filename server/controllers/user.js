@@ -1,11 +1,11 @@
 var User = require('../models/user');
 var sha1 = require('sha1');
 
-exports.new = function(req, res) {
+exports.new = function (req, res) {
   res.render('pages/user-register');
 };
 
-exports.register = function(req, res) {
+exports.register = function (req, res) {
   var newUser = req.body.user;
   if (newUser.password == '' || newUser.password2 == '') {
     req.flash('flash', 'Mot de passe vide !');
@@ -23,10 +23,10 @@ exports.register = function(req, res) {
   delete newUser.password2;
   User.create(
     req.body.user
-  ).then(function(user) {
+  ).then(function (user) {
     req.flash('flash', 'Utilisateur enregistré !');
     res.redirect('/');
-  }).catch(function(err) {
+  }).catch(function (err) {
     req.flash('flash', 'Erreur : ' + err);
     res.redirect('/user/new');
   });

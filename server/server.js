@@ -27,7 +27,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   res.locals.flash = req.flash('flash');
   res.locals.user = req.user;
   next();
@@ -35,7 +35,7 @@ app.use(function(req, res, next) {
 
 require('./routes')(app, passport);
 
-var server = app.listen(port, function() {
+var server = app.listen(port, function () {
   console.log('Listening on port ' + port);
 });
 

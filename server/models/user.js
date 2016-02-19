@@ -22,24 +22,24 @@ var User = db.define('user', {
   },
 });
 
-User.findByUserName = function(username) {
+User.findByUserName = function (username) {
   return User.find({
     include: [{ all: true }],
     where: { username: username },
   });
 },
 
-User.findById = function(id) {
+User.findById = function (id) {
   return User.find({
     include: [{ all: true }],
     where: { id: id },
   });
 },
 
-User.sync().then(function() {
+User.sync().then(function () {
   User.find({
     where: { username: 'admin' },
-  }).then(function(user) {
+  }).then(function (user) {
     if (!user) {
       User.create({
         username: 'admin',

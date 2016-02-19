@@ -5,7 +5,7 @@ var userController = require('./controllers/user');
 var loginController = require('./controllers/login');
 var chatController = require('./controllers/chat');
 
-module.exports = function(app, passport) {
+module.exports = function (app, passport) {
 
   /**
   ** CHAT
